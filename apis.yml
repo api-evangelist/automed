@@ -1,23 +1,62 @@
 aid: automed
+
 name: Automed
-description: 'Automed is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: 'Automed provides an AI‑powered medication safety platform that combines smart dispensing, connected monitoring, and predictive insights to ensure patients take the right medication at the right time across home, hospital, and pharmacy settings. The solution offers closed‑loop verification, adherence visibility for care teams, and predictive analytics to close the gap between prescribed and actually taken medication.'
+
 url: https://raw.githubusercontent.com/api-evangelist/automed/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-26 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-26'
+
 modified: '2026-09-26'
+
 tags:
-- Company
-apis: []
+- Healthcare
+- AI
+- Medication
+- Adherence
+- Platform
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Hosts
+  url: hosts/automed-hosts.yml
+- type: Vendors
+  url: vendors/automed-vendors.yml
+- type: Login
+  url: https://www.automed.tech/auth/login
+- type: DomainSecurity
+  url: security/automed-domain-security.yml
 - type: Website
-  url: https://equityzen.com/company/automed
+  url: https://www.automed.tech
+
+apis: []
+
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: Automed's website provides login and registration pages but no public developer documentation or API specifications.
+  evidence:
+    - url: https://www.automed.tech
+      status: 200
+  checked: 2026-09-26
+x-enrichment:
+  date: '2026-09-26'
+  status: enriched
+  artifacts_added: 5
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
